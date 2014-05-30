@@ -1,5 +1,7 @@
 <h1>Listing media</h1>
 
+<p id="notice"><%= notice %></p>
+
 <table>
   <thead>
     <tr>
@@ -16,6 +18,7 @@
         <td><%= medium.name %></td>
         <td><%= medium.meta %></td>
         <td><%= medium.kind %></td>
+        <td><%= image_tag medium.image.url %></td>
         <td><%= link_to 'Show', medium %></td>
         <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
         <td><%= link_to 'Destroy', medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>

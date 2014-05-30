@@ -1,4 +1,4 @@
-<%= form_for(@medium) do |f| %>
+<%= form_for(@medium, :html => { :multipart => true }) do |form| %>
   <% if @medium.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
@@ -11,20 +11,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :meta %><br>
-    <%= f.text_area :meta %>
+    <%= form.label :meta %><br>
+    <%= form.text_area :meta %>
   </div>
   <div class="field">
     <% @kinds.each do |kind| %>
-      <%= f.radio_button :kind, "#{kind}" %>
-      <%= f.label :kind, "#{kind}" %>
+      <%= form.radio_button :kind, "#{kind}" %>
+      <%= form.label :kind, "#{kind}" %>
     <% end %>
   </div>
+  <div class="field">
+    <%= form.file_field :image %>
+  </div>
   <div class="actions">
-    <%= f.submit "Create" %>
+    <%= form.submit "Create" %>
   </div>
 <% end %>
