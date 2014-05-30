@@ -1,5 +1,5 @@
 class Medium < ActiveRecord::Base
 
-  validates :name, :meta, :type, presence: true
+  validates :name, :meta, :kind, presence: true
   
 end

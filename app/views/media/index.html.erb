@@ -15,7 +15,7 @@
       <tr>
         <td><%= medium.name %></td>
         <td><%= medium.meta %></td>
-        <td><%= medium.type %></td>
+        <td><%= medium.kind %></td>
         <td><%= link_to 'Show', medium %></td>
         <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
         <td><%= link_to 'Destroy', medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,5 +25,5 @@
 </table>
 
 <br>
-
+<%= link_to 'Delete all', delete_all_media_path, method: 'get' %>
 <%= link_to '+', new_medium_path %>

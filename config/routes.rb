@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
   root 'media#index'
-  resources :media
+  resources :media do
+    collection do
+      get 'delete_all'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

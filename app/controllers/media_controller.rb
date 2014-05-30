@@ -28,11 +28,9 @@ class MediaController < ApplicationController
 
     respond_to do |format|
       if @medium.save
-        format.html { redirect_to @medium, notice: 'Medium was successfully created.' }
-        format.json { render :show, status: :created, location: @medium }
+        format.html { redirect_to media_url, notice: 'Medium was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @medium.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +40,9 @@ class MediaController < ApplicationController
   def update
     respond_to do |format|
       if @medium.update(medium_params)
-        format.html { redirect_to @medium, notice: 'Medium was successfully updated.' }
-        format.json { render :show, status: :ok, location: @medium }
+        format.html { redirect_to media_url, notice: 'Medium was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @medium.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,13 @@ class MediaController < ApplicationController
     @medium.destroy
     respond_to do |format|
       format.html { redirect_to media_url, notice: 'Medium was successfully destroyed.' }
-      format.json { head :no_content }
+    end
+  end
+
+  def delete_all
+    Medium.delete_all
+    respond_to do |format|
+      format.html { redirect_to media_url, notice: 'All media was successfully destroyed.' }
     end
   end
 
@@ -69,6 +71,6 @@ class MediaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medium_params
-      params.require(:medium).permit(:name, :meta, :type)
+      params.require(:medium).permit(:name, :meta, :kind)
     end
 end
