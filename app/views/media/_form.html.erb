@@ -2,7 +2,6 @@
   <% if @medium.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
-
       <ul>
       <% @medium.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -20,8 +19,10 @@
     <%= f.text_area :meta %>
   </div>
   <div class="field">
-    <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+    <% @kinds.each do |kind| %>
+      <%= f.radio_button :kind, "#{kind}" %>
+      <%= f.label :kind, "#{kind}" %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit "Create" %>

@@ -1,5 +1,6 @@
 class MediaController < ApplicationController
   before_action :set_medium, only: [:show, :edit, :update, :destroy]
+  before_action :load_kinds, only: [:new, :create, :edit, :update]
 
   # GET /media
   # GET /media.json
@@ -64,6 +65,10 @@ class MediaController < ApplicationController
   end
 
   private
+    def load_kinds
+      @kinds = ['Movie', 'TV show', 'Video game', 'Music', 'Book']
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_medium
       @medium = Medium.find(params[:id])
