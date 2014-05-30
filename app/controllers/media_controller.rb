@@ -5,12 +5,15 @@ class MediaController < ApplicationController
   # GET /media
   # GET /media.json
   def index
+    @medium = Medium.first
     @media = Medium.all
   end
 
   # GET /media/1
   # GET /media/1.json
   def show
+    @media = Medium.all
+    render :index
   end
 
   # GET /media/new
