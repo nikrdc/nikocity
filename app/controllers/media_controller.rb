@@ -5,8 +5,8 @@ class MediaController < ApplicationController
   # GET /media
   # GET /media.json
   def index
-    if Medium.first
-      @medium = Medium.first
+    if Medium.last
+      @medium = Medium.last
     else
       @medium = Medium.new
     end
