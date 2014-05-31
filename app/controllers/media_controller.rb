@@ -5,7 +5,11 @@ class MediaController < ApplicationController
   # GET /media
   # GET /media.json
   def index
-    @medium = Medium.first
+    if Medium.first
+      @medium = Medium.first
+    else
+      @medium = Medium.new
+    end
     @media = Medium.all
   end
 

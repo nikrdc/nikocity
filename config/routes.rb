@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root 'media#index'
-  resources :media do
+  resources :media, path: '' do
     collection do
       get 'delete_all'
     end

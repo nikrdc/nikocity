@@ -6,6 +6,9 @@
   <%= image_tag @medium.image.url %>
   <%= @medium.name %>
   <%= @medium.meta %>
+  <%= @medium.kind %>
+  <%= link_to 'Edit', edit_medium_path(@medium) %></td>
+  <%= link_to 'Delete', @medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </div>
 
 <ul>
@@ -13,33 +16,6 @@
   <li><%= link_to(image_tag(medium.image.url), medium) %></li>
 <% end %>
 </ul>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Meta</th>
-      <th>Type</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @media.each do |medium| %>
-      <tr>
-        <td><%= medium.name %></td>
-        <td><%= medium.meta %></td>
-        <td><%= medium.kind %></td>
-        <td><%= image_tag medium.image.url %></td>
-        <td><%= link_to 'Show', medium %></td>
-        <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
-        <td><%= link_to 'Destroy', medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 <%= link_to 'Delete all', delete_all_media_path, method: 'get' %>
