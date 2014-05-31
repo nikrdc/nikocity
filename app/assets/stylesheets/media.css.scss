@@ -9,11 +9,15 @@
 		text-align: center;
 	}
 
+	#links {
+		text-align: center;
+	}
+
 }
 
 #sidebar {
 	width: 20%;
-	padding: 77px 0 0 5%;
+	padding: 57px 0 0 5%;
 
 	img {
 		width: 100%;
@@ -26,6 +30,7 @@
 	#name {
 		font-size: 25px;
 		margin: 15px 0 0 0;
+		line-height: 130%;
 	}
 
 	#meta {

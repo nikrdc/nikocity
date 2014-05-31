@@ -1,10 +1,13 @@
 <div id="mainbar">
+	
+	<p id="notice"><%= notice %></p>
 
 	<div id="menubar">
 		<h1><%= link_to 'Nikocity', root_path %></h1>
-		<p id="notice"><%= notice %></p>
-		<%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %>
-		<%= link_to 'New', new_medium_path %>
+		<div id="links">
+			<%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %>
+			<%= link_to 'New', new_medium_path %>
+		</div>
 	</div>
 
 	<ul>
@@ -15,7 +18,6 @@
 </div>
 
 <div id="sidebar">
-  <%= image_tag @medium.image.url %>
   <div id="name"><%= @medium.name %></div>
   <div id="meta"><%= @medium.meta %></div>
   <%= link_to 'Edit', edit_medium_path(@medium) %>
