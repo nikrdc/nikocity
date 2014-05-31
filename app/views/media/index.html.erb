@@ -1,25 +1,15 @@
-<div id="mainbar">
-	
-	<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-	<div id="menubar">
-		<h1><%= link_to 'Nikocity', root_path %></h1>
-		<div id="links">
-			<%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %>
-			<%= link_to 'New', new_medium_path %>
-		</div>
+<div id="menubar">
+	<h1><%= link_to 'Nikocity', root_path %></h1>
+	<div id="links">
+		<%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'New', new_medium_path %>
 	</div>
-
-	<ul>
-	<% @media.reverse.each do |medium| %>
-	  <li><%= link_to(image_tag(medium.image.url), medium) %></li>
-	<% end %>
-	</ul>
 </div>
 
-<div id="sidebar">
-  <div id="name"><%= @medium.name %></div>
-  <div id="meta"><%= @medium.meta %></div>
-  <%= link_to 'Edit', edit_medium_path(@medium) %>
-  <%= link_to 'Delete', @medium, method: :delete, data: { confirm: 'Are you sure?' } %>  
-</div>
+<ul>
+<% @media.reverse.each do |medium| %>
+	<li><%= link_to(image_tag(medium.image.url), medium) %></li>
+<% end %>
+</ul>
