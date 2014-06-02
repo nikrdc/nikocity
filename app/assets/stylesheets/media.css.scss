@@ -16,6 +16,19 @@
 		#links {
 			text-align: center;
 		}
+
+		#da, #nu {
+			display: inline-block;
+			padding: 2px 6px;
+		}
+
+		#da {
+			background-color: #ff617e;
+		}
+
+		#nu {
+			background-color: #00b369;
+		}
 	}
 
 	ul {
@@ -32,3 +45,17 @@
 		height: 200px;
 	}
 }
+
+#new {
+	width: 90%;
+	margin: 0 auto;
+
+	h1 {
+		font-size: 15px;
+		text-align: center;
+		margin: 50px 0 15px 0;
+	}
+
+	
+}
+

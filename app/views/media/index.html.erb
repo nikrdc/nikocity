@@ -4,8 +4,8 @@
 	<div id="menubar">
 		<h1><%= link_to 'Nikocity', root_path %></h1>
 		<div id="links">
-			<%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %>
-			<%= link_to 'New', new_medium_path %>
+			<div id="da"><%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %></div>
+			<div id="nu"><%= link_to 'New', new_medium_path %></div>
 		</div>
 	</div>
 
