@@ -17,6 +17,6 @@
 	<div id="links">
 		<%= link_to 'Back', media_path, id: 'back' %>
 		<%= link_to 'Edit', edit_medium_path(@medium), id: 'edit' %>
-		<%= link_to 'Delete', medium_path(@medium), method: :delete, id: 'delete' %>
+		<%= link_to 'Delete', medium_path(@medium), method: :delete, id: 'delete', data: { confirm: 'Are you sure?' } %>
 	</div>
 </div>
