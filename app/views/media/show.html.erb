@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div id="show">	
+	<div id="name" class="display">
+	  <strong>Name:</strong>
+	  <%= @medium.name %>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @medium.name %>
-</p>
+	<div id="meta" class="display">
+	  <strong>Meta:</strong>
+	  <%= @medium.meta %>
+	</div>
 
-<p>
-  <strong>Meta:</strong>
-  <%= @medium.meta %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @medium.kind %>
-</p>
-
-<%= link_to 'Edit', edit_medium_path(@medium) %>
-<%= link_to 'Delete', medium_path(@medium), method: :delete %>
-<%= link_to 'Back', media_path %>
+	<div id="kind" class="display">
+	  <strong>Kind:</strong>
+	  <%= @medium.kind %>
+	</div>
+	
+	<div id="links">
+		<%= link_to 'Back', media_path, id: 'back' %>
+		<%= link_to 'Edit', edit_medium_path(@medium), id: 'edit' %>
+		<%= link_to 'Delete', medium_path(@medium), method: :delete, id: 'delete' %>
+	</div>
+</div>

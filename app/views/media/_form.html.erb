@@ -1,33 +1,40 @@
-<%= form_for(@medium, :html => { :multipart => true }) do |form| %>
-  <% if @medium.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+<div id="form"> 
+  <%= form_for(@medium, :html => { :multipart => true }) do |form| %>
+    <% if @medium.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+        <ul>
+        <% @medium.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :meta %><br>
+      <%= form.text_area :meta %>
+    </div>
+    <div class="field">
       <ul>
-      <% @medium.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @kinds.each do |kind| %>
+        <li>
+        <%= form.radio_button :kind, "#{kind}" %>
+        <%= form.label :kind, "#{kind}", :value => "#{kind}" %>
+        </li>
       <% end %>
       </ul>
     </div>
+    <div class="field">
+      <%= form.file_field :image %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Save" %>
+      <%= link_to 'Back', root_url, id: 'back' %>
+    </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :meta %><br>
-    <%= form.text_area :meta %>
-  </div>
-  <div class="field">
-    <% @kinds.each do |kind| %>
-      <%= form.radio_button :kind, "#{kind}" %>
-      <%= form.label :kind, "#{kind}" %>
-    <% end %>
-  </div>
-  <div class="field">
-    <%= form.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
+</div>

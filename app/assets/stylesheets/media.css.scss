@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$confirm: #00b369;
+$deny: #ff617e;
+
 #index {
 	width: 90%;
 	margin: 0 auto;
@@ -28,11 +31,11 @@
 		}
 
 		#da {
-			background-color: #ff617e;
+			background-color: $deny;
 		}
 
 		#nu {
-			background-color: #00b369;
+			background-color: $confirm;
 		}
 	}
 
@@ -51,7 +54,7 @@
 	}
 }
 
-#new {
+#new, #edit {
 	width: 90%;
 	margin: 0 auto;
 
@@ -59,8 +62,95 @@
 		font-size: 15px;
 		text-align: center;
 		margin: 50px 0 15px 0;
+	}	
+}
+
+#form {
+	width: 200px;
+	margin: 0 auto;
+
+	input[type="text"], textarea {
+		width: 100%;
+		height: 20px;
+		font-size: 18px;
+		padding: 5px;
+		border: 1px solid black;
+		color: black;
+		margin: 3px 0 15px 0;
+
+		&:focus {
+			outline: 3px solid black;
+		}
 	}
 
-	
+	textarea {
+		height: 100px;
+	}
+
+	ul {
+		margin: 0 0 20px -40px;
+		list-style-type: none;
+	}
+
+	#medium_image {
+		margin: 0 0 15px 0;
+	}
+
+	input[type="submit"] {
+		width: 106%;
+		border: 1px solid $confirm;
+		background-color: $confirm;
+		padding: 5px;
+		color: black;
+		font-size: 18px;
+				margin: 0 0 30px 0;
+
+		&:hover {
+			outline: 3px solid #00673c;
+			border: 1px solid $confirm;
+			cursor: pointer;
+		}
+	}
+
+	#back {
+		width: 100%;
+		font-size: 18px;
+		text-align: center;
+		padding: 5px 83px 5px 84px;
+		border: 1px solid #ccc;
+		background-color: #ccc;
+
+		&:hover {
+			outline: 3px solid #999;
+		}
+	}
+}
+
+#show {
+	width: 200px;
+	margin: 40px auto 0 auto;
+
+	.display {
+		margin: 10px 0;
+	}
+
+	ul {
+		margin: 0 0 20px -40px;
+		list-style-type: none;
+		display: inline-block;
+	}
+
+	#links {
+		margin: 15px 0 0 0;
+	}
+
+	#edit, #delete, #back {
+		padding: 2px 6px;
+		background-color: #ccc;
+	}
+
+	#delete {
+		background-color: $deny;
+	}
 }
 
