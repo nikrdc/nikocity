@@ -64,6 +64,7 @@ class MediaController < ApplicationController
     end
   end
 
+
   private
     def load_kinds
       @kinds = ['Movie', 'TV show', 'Video game', 'Music', 'Book']

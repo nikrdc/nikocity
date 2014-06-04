@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'users/new'
-
-  root 'media#index'
+  root 'media#index' 
+  resources :users
   resources :media, path: '' do
     collection do
       get 'delete_all'
