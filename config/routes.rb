@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'users/new'
+
   root 'media#index'
   resources :media, path: '' do
     collection do
