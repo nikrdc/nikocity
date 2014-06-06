@@ -5,7 +5,11 @@ class MediaController < ApplicationController
   # GET /media
   # GET /media.json
   def index
-    @media = Medium.all
+    if params[:kind]
+      @media = Medium.where(kind: params[:kind])
+    else
+      @media = Medium.all
+    end
   end
 
   # GET /media/1

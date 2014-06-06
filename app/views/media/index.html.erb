@@ -2,10 +2,15 @@
 	<p id="notice"><%= notice %></p>
 
 	<div id="menubar">
-		<h1><%= link_to 'Nikocity', root_path %></h1>
+		<h1><%= link_to 'Nikocity', root_url %></h1>
 		<div id="links">
 			<div id="da"><%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %></div>
 			<div id="nu"><%= link_to 'New', new_medium_path %></div>
+			<div id="so"><%= link_to 'Movies', media_path(:kind => 'Movie') %></div>
+			<div id="so"><%= link_to 'TV shows', media_path(:kind => 'TV show') %></div>
+			<div id="so"><%= link_to 'Video games', media_path(:kind => 'Video game') %></div>
+			<div id="so"><%= link_to 'Music', media_path(:kind => 'Music') %></div>
+			<div id="so"><%= link_to 'Books', media_path(:kind => 'Book') %></div>
 		</div>
 	</div>
 
