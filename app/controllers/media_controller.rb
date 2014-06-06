@@ -62,9 +62,15 @@ class MediaController < ApplicationController
   end
 
   def delete_all
-    Medium.delete_all
-    respond_to do |format|
-      format.html { redirect_to media_url, notice: 'All media was successfully destroyed.' }
+    if Medium.first
+      Medium.delete_all
+      respond_to do |format|
+        format.html { redirect_to media_url, notice: 'All media was successfully destroyed.' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to media_url, notice: 'No media found to destroy.' }
+      end
     end
   end
 

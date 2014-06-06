@@ -4,7 +4,11 @@
 	<div id="menubar">
 		<h1><%= link_to 'Nikocity', root_url %></h1>
 		<div id="links">
-			<div id="da"><%= link_to 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' } %></div>
+			<div id="da">
+			<%= link_to_if(@media.first, 'Delete all', delete_all_media_path, method: 'get', data: { confirm: 'Are you sure?' }) do
+					link_to('Delete all', delete_all_media_path, method: 'get')
+					end %>
+			</div>
 			<div id="nu"><%= link_to 'New', new_medium_path %></div>
 			<div id="so"><%= link_to 'Movies', media_path(:kind => 'Movie') %></div>
 			<div id="so"><%= link_to 'TV shows', media_path(:kind => 'TV show') %></div>
